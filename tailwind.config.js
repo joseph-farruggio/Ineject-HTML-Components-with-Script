@@ -1,7 +1,8 @@
 module.exports = {
   content: [
     "./index.html",
-    "./markup.html"
+    "./dropdown.html",
+    "./modal.html",
     ],
   theme: {
     extend: {},

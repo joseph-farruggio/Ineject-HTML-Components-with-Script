@@ -3413,10 +3413,90 @@ var module_default = src_default;
 
 /***/ }),
 
-/***/ "./markup.html":
-/*!*********************!*\
-  !*** ./markup.html ***!
-  \*********************/
+/***/ "./src/dropdown.js":
+/*!*************************!*\
+  !*** ./src/dropdown.js ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  return {
+    open: false,
+    toggle: function toggle() {
+      this.open = !this.open;
+    }
+  };
+});
+
+/***/ }),
+
+/***/ "./src/initAlpine.js":
+/*!***************************!*\
+  !*** ./src/initAlpine.js ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
+/* harmony import */ var _dropdown_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./dropdown.js */ "./src/dropdown.js");
+/* harmony import */ var _dropdown_html__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../dropdown.html */ "./dropdown.html");
+/* harmony import */ var _modal_html__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../modal.html */ "./modal.html");
+
+
+ // import modal from './modal.js'
+
+
+
+var initAlpine = function initAlpine() {
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data('dropdown', _dropdown_js__WEBPACK_IMPORTED_MODULE_1__["default"]);
+  window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
+  alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
+  document.getElementById("dropdown").innerHTML = _dropdown_html__WEBPACK_IMPORTED_MODULE_2__["default"];
+  document.getElementById("modal").innerHTML = _modal_html__WEBPACK_IMPORTED_MODULE_3__["default"];
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (initAlpine);
+
+/***/ }),
+
+/***/ "./src/injectCSS.js":
+/*!**************************!*\
+  !*** ./src/injectCSS.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var injectCSS = function injectCSS() {
+  var head = document.head;
+  var link = document.createElement("link");
+  link.type = "text/css";
+  link.rel = "stylesheet";
+
+  if (false) {} else {
+    link.href = "./../dist/styles.css";
+  }
+
+  head.appendChild(link);
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (injectCSS);
+
+/***/ }),
+
+/***/ "./dropdown.html":
+/*!***********************!*\
+  !*** ./dropdown.html ***!
+  \***********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -3425,6 +3505,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 // Module
 var code = "<div class=\"relative inline-block text-left\" x-data=\"{open: false}\">\n  <div>\n    <button type=\"button\" @click=\"open = !open\" class=\"inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500\" id=\"menu-button\" aria-expanded=\"true\" aria-haspopup=\"true\">\n      Options\n      <!-- Heroicon name: solid/chevron-down -->\n      <svg class=\"-mr-1 ml-2 h-5 w-5\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 20 20\" fill=\"currentColor\" aria-hidden=\"true\">\n        <path fill-rule=\"evenodd\" d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\" clip-rule=\"evenodd\" />\n      </svg>\n    </button>\n  </div>\n\n  <div x-transition x-show=\"open\" class=\"origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none\" role=\"menu\" aria-orientation=\"vertical\" aria-labelledby=\"menu-button\" tabindex=\"-1\">\n    <div class=\"py-1\" role=\"none\">\n      <!-- Active: \"bg-gray-100 text-gray-900\", Not Active: \"text-gray-700\" -->\n      <a href=\"#\" class=\"text-gray-700 block px-4 py-2 text-sm\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-0\">Account settings</a>\n      <a href=\"#\" class=\"text-gray-700 block px-4 py-2 text-sm\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-1\">Support</a>\n      <a href=\"#\" class=\"text-gray-700 block px-4 py-2 text-sm\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-2\">License</a>\n      <form method=\"POST\" action=\"#\" role=\"none\">\n        <button type=\"submit\" class=\"text-gray-700 block w-full text-left px-4 py-2 text-sm\" role=\"menuitem\" tabindex=\"-1\" id=\"menu-item-3\">\n          Sign out\n        </button>\n      </form>\n    </div>\n  </div>\n</div>";
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
+
+/***/ }),
+
+/***/ "./modal.html":
+/*!********************!*\
+  !*** ./modal.html ***!
+  \********************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+// Module
+var code = "<div x-data=\"{open:false}\" >\n    <button @click=\"open = true\" type=\"button\" class=\"hover:cursor-pointer inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500\">\n    Open Modal\n    </button>\n\n    <!-- This example requires Tailwind CSS v2.0+ -->\n    <div  x-show=\"open\" class=\"fixed z-10 inset-0 overflow-y-auto\" aria-labelledby=\"modal-title\" role=\"dialog\" aria-modal=\"true\">\n        <div x-show=\"open\" class=\"flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0\"\n            x-transition:enter=\"ease-out duration-300\"\n            x-transition:enter-start=\"opacity-0\"\n            x-transition:enter-end=\"opacity-100\"\n            x-transition:leave=\"ease-in duration-200\"\n            x-transition:leave-start=\"opacity-100\"\n            x-transition:leave-end=\"opacity-0\">\n            \n            <div class=\"fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity\" aria-hidden=\"true\"></div>\n\n            <!-- This element is to trick the browser into centering the modal contents. -->\n            <span class=\"hidden sm:inline-block sm:align-middle sm:h-screen\" aria-hidden=\"true\">&#8203;</span>\n\n            <div x-show=\"open\" @click.away=\"open = false\" class=\"inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-sm sm:w-full sm:p-6\"\n                x-transition:enter=\"ease-out duration-300\"\n                x-transition:enter-start=\"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\"\n                x-transition:enter-end=\"opacity-100 translate-y-0 sm:scale-100\"\n                x-transition:leave=\"ease-in duration-200\"\n                x-transition:leave-start=\"opacity-100 translate-y-0 sm:scale-100\"\n                x-transition:leave-end=\"opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95\">\n            <div>\n                <div class=\"mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-green-100\">\n                <!-- Heroicon name: outline/check -->\n                <svg class=\"h-6 w-6 text-green-600\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" aria-hidden=\"true\">\n                    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M5 13l4 4L19 7\" />\n                </svg>\n                </div>\n                <div class=\"mt-3 text-center sm:mt-5\">\n                <h3 class=\"text-lg leading-6 font-medium text-gray-900\" id=\"modal-title\">\n                    Payment successful\n                </h3>\n                <div class=\"mt-2\">\n                    <p class=\"text-sm text-gray-500\">\n                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur amet labore.\n                    </p>\n                </div>\n                </div>\n            </div>\n            <div class=\"mt-5 sm:mt-6\">\n                <button @click=\"open = false\" type=\"button\" class=\"inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-indigo-600 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:text-sm\">\n                    Go back to dashboard\n                </button>\n            </div>\n            </div>\n        </div>\n    </div>\n</div>";
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);
 
@@ -3505,32 +3602,12 @@ var __webpack_exports__ = {};
   !*** ./src/app.js ***!
   \********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _markup_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../markup.html */ "./markup.html");
-/* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
+/* harmony import */ var _injectCSS__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./injectCSS */ "./src/injectCSS.js");
+/* harmony import */ var _initAlpine__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./initAlpine */ "./src/initAlpine.js");
 
 
-function addCss(fileName) {
-  var head = document.head;
-  var link = document.createElement("link");
-  link.type = "text/css";
-  link.rel = "stylesheet";
-  link.href = fileName;
-  head.appendChild(link);
-}
-
-addCss('https://cdn.jsdelivr.net/gh/joseph-farruggio/Ineject-HTML-Components-with-Script/dist/styles.css');
-
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('toggled', function () {
-  return {
-    open: false,
-    toggle: function toggle() {
-      this.open = !this.open;
-    }
-  };
-});
-window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].start();
-document.getElementById("app").innerHTML = _markup_html__WEBPACK_IMPORTED_MODULE_0__["default"];
+(0,_injectCSS__WEBPACK_IMPORTED_MODULE_0__["default"])();
+(0,_initAlpine__WEBPACK_IMPORTED_MODULE_1__["default"])();
 })();
 
 /******/ })()

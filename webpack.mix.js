@@ -1,6 +1,6 @@
 let mix = require('laravel-mix');
 
-mix.js('src/index.js', 'dist').setPublicPath('dist');
+mix.js('src/app.js', 'dist').setPublicPath('dist');
 
 mix.webpackConfig({
   module: {

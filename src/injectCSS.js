@@ -9,6 +9,7 @@ const injectCSS = () => {
   } else {
       link.href = "./../dist/styles.css";
   }
+  // link.href = "./../dist/styles.css";
   head.appendChild(link);
 }
 

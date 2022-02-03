@@ -8,7 +8,7 @@
     "dev": "npx mix watch",
     "build:css": "npx tailwindcss -i ./src/css/styles.css -o ./dist/css/styles.css --minify",
     "build:js": "./node_modules/.bin/esbuild src/index.js --bundle --outfile=dist/index.js --minify",
-    "build": "npm run build:css && npm run build:js"
+    "build": "npx mix --production"
   },
   "author": "",
   "license": "ISC",

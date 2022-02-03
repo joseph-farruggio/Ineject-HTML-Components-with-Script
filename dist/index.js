@@ -3518,7 +3518,7 @@ function addCss(fileName) {
   head.appendChild(link);
 }
 
-addCss('./../dist/styles.css');
+addCss('https://cdn.jsdelivr.net/gh/joseph-farruggio/Ineject-HTML-Components-with-Script/dist/styles.css');
 
 alpinejs__WEBPACK_IMPORTED_MODULE_1__["default"].data('toggled', function () {
   return {

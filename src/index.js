@@ -11,7 +11,7 @@ function addCss(fileName) {
   head.appendChild(link);
 }
 
-addCss('./../dist/styles.css');
+addCss('https://cdn.jsdelivr.net/gh/joseph-farruggio/Ineject-HTML-Components-with-Script/dist/styles.css');
 
 import Alpine from 'alpinejs'
 Alpine.data('toggled', () => ({

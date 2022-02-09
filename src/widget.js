@@ -10,7 +10,7 @@ export default () => ({
     
     async convertLocation() {
         var zip = (this.input != '') ? this.input : '60604';
-        const response = await fetch(`http://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${this.apiKey}`);
+        const response = await fetch(`https://api.openweathermap.org/geo/1.0/zip?zip=${zip}&appid=${this.apiKey}`);
         return response.json();
       
     },
@@ -20,7 +20,7 @@ export default () => ({
         this.location.lat = response.lat;
         this.location.lon = response.lon;
         
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${this.location.lat}&lon=${this.location.lon}&appid=${this.apiKey}&units=imperial`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${this.location.lat}&lon=${this.location.lon}&appid=${this.apiKey}&units=imperial`)
             .then(response => {
                 if (!response.ok) alert(`Something went wrong: ${response.status} - ${response.statusText}`)
                 return response.json()

@@ -3539,7 +3539,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 zip = _this.input != '' ? _this.input : '60604';
                 _context.next = 3;
-                return fetch("http://api.openweathermap.org/geo/1.0/zip?zip=".concat(zip, "&appid=").concat(_this.apiKey));
+                return fetch("https://api.openweathermap.org/geo/1.0/zip?zip=".concat(zip, "&appid=").concat(_this.apiKey));
 
               case 3:
                 response = _context.sent;
@@ -3569,7 +3569,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _context2.sent;
                 _this2.location.lat = response.lat;
                 _this2.location.lon = response.lon;
-                fetch("http://api.openweathermap.org/data/2.5/weather?lat=".concat(_this2.location.lat, "&lon=").concat(_this2.location.lon, "&appid=").concat(_this2.apiKey, "&units=imperial")).then(function (response) {
+                fetch("https://api.openweathermap.org/data/2.5/weather?lat=".concat(_this2.location.lat, "&lon=").concat(_this2.location.lon, "&appid=").concat(_this2.apiKey, "&units=imperial")).then(function (response) {
                   if (!response.ok) alert("Something went wrong: ".concat(response.status, " - ").concat(response.statusText));
                   return response.json();
                 }).then(function (data) {

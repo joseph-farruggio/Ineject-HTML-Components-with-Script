@@ -2,30 +2,27 @@
   "name": "inject-widget",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "dev:css": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch --minify",
     "dev": "npx mix watch",
-    "build:css": "npx tailwindcss -i ./src/css/styles.css -o ./dist/css/styles.css --minify",
-    "build:js": "./node_modules/.bin/esbuild src/index.js --bundle --outfile=dist/index.js --minify",
     "build": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "cross-env": "^7.0.3",
     "@alpinejs/intersect": "^3.8.0",
+    "@tailwindcss/forms": "^0.4.0",
     "alpinejs": "^3.0.1",
-    "esbuild": "^0.14.8",
+    "cross-env": "^7.0.3",
     "html-loader": "^3.1.0",
     "postcss": "^8.4.5"
   },
   "devDependencies": {
-    "extract-loader": "^5.1.0",
     "laravel-mix": "^6.0.41",
+    "laravel-mix-tailwind": "^0.1.2",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
     "posthtml": "^0.16.5",
-    "posthtml-custom-elements": "^1.1.2",
-    "posthtml-include": "^1.7.2",
     "posthtml-loader": "^2.0.1",
     "tailwindcss": "^3.0.18"
   }

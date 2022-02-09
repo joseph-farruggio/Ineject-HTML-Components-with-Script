@@ -1,11 +1,12 @@
 module.exports = {
   content: [
     "./index.html",
-    "./dropdown.html",
-    "./modal.html",
+    "./widget.html"
     ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+     require('@tailwindcss/forms'),
+  ],
 }

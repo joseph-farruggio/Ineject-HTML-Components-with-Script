@@ -1,17 +1,15 @@
 import Alpine from 'alpinejs'
-import dropdown from './dropdown.js'
-import dropdownHtml from './../dropdown.html';
+import widget from './widget.js'
 
 // import modal from './modal.js'
-import modalHtml from './../modal.html';
+import widgetHTML from './../widget.html';
 
 const initAlpine = () => {
-    Alpine.data('dropdown', dropdown)
+    Alpine.data('widget', widget)
     window.Alpine = Alpine
     Alpine.start();
 
-    document.getElementById("dropdown").innerHTML = dropdownHtml;
-    document.getElementById("modal").innerHTML = modalHtml;
+    document.getElementById("app").innerHTML = widgetHTML;
 }
 
 export default initAlpine;

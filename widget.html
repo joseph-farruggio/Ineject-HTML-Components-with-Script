@@ -2,7 +2,7 @@
 	<template x-if="weather">
 		<div
 			class="card min-w-sm max-w-sm border border-gray-100  transition-shadow test  shadow-lg hover:shadow-shadow-xl w-full bg-indigo-900 text-purple-50 rounded-md pb-10">
-			<h2 class="text-md mb-2 px-4 pt-4">
+			<h2 class="text-md mt-0 mb-2 px-4 pt-4">
 				<div class="flex justify-between">
 					<div class="badge relative top-0">
 						<span class="mt-2 py-1 h-12px text-md font-semibold w-12px  rounded right-1 bottom-1 pr-4"
@@ -15,7 +15,7 @@
 			<div class="flex items-center p-4">
 				<div class="flex flex-col justify-center items-center w-96">
 					<img :src="'https://openweathermap.org/img/wn/' + weather.weather[0].icon + '@2x.png'"
-						class="w-32"></span>
+						class="w-32 shadow-none"></span>
 					<span x-text="weather.weather[0].description" class="-mt-6"></span>
 				</div>
 			</div>

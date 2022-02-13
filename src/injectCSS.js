@@ -6,7 +6,7 @@ const injectCSS = () => {
 	link.rel = "stylesheet";
 	if (process.env.NODE_ENV == "production") {
 		link.href =
-			"https://rawcdn.githack.com/joseph-farruggio/Ineject-HTML-Components-with-Script/45f29714f100a4aa1a680a824eb58ec4d2a1971d/dist/styles.css";
+			"https://cdn.jsdelivr.net/gh/joseph-farruggio/Ineject-HTML-Components-with-Script@1/dist/styles.min.css";
 	} else {
 		link.href = "./../dist/styles.css";
 	}

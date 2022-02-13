@@ -1,15 +1,15 @@
-import Alpine from 'alpinejs'
-import widget from './widget.js'
+import widgetAlpine from "alpinejs";
+import widget from "./widget.js";
 
 // import modal from './modal.js'
-import widgetHTML from './../widget.html';
+import widgetHTML from "./../widget.html";
 
 const initAlpine = () => {
-    Alpine.data('widget', widget)
-    window.Alpine = Alpine
-    Alpine.start();
+	widgetAlpine.data("widget", widget);
+	window.widgetAlpine = widgetAlpine;
+	widgetAlpine.start();
 
-    document.getElementById("app").innerHTML = widgetHTML;
-}
+	document.getElementById("app").innerHTML = widgetHTML;
+};
 
 export default initAlpine;
